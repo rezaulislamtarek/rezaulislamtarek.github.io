@@ -1693,3 +1693,1028 @@ textarea.form-control {
     transform: translateY(-1px);
 }
 
+/* -------------------------------------------------------------
+   16. High-Fidelity Mockup Screen Styles & Animations
+------------------------------------------------------------- */
+
+/* Accordion Mobile Container */
+.project-mobile-preview {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.project-mobile-preview.open {
+    opacity: 1;
+    border-top: 1px solid var(--card-border);
+    margin-top: 1rem;
+}
+
+.mobile-simulator-wrapper {
+    width: 100%;
+    max-width: 280px;
+    height: 480px;
+    margin: 0.5rem auto;
+    border-radius: 36px;
+    background-color: var(--phone-border);
+    padding: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-simulator-wrapper .iphone-screen {
+    padding-top: 20px; /* Smaller padding on mobile screen */
+    border-radius: 28px;
+}
+
+/* General Screen styles */
+.mock-app-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    animation: fade-screen-content 0.3s ease-out;
+}
+
+@keyframes fade-screen-content {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.mock-app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.8rem;
+}
+
+.app-logo {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+/* 1. Koalafi Screen Styles */
+.koalafi-screen .app-logo {
+    color: #02b3e4;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+.mock-lease-card {
+    background: linear-gradient(135deg, #0d1e3d 0%, #0361a4 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.2rem;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card-label {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-amount {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0.2rem 0 0.5rem;
+    color: #ffffff;
+}
+
+.card-badge {
+    display: inline-block;
+    background: #02b3e4;
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.card-chip {
+    width: 25px;
+    height: 18px;
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    border-radius: 3px;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+}
+
+.mock-map-section {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.section-lbl {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+    letter-spacing: 0.05em;
+}
+
+.mini-map {
+    height: 100px;
+    background: #111528;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.mini-map::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 0), radial-gradient(rgba(255,255,255,0.02) 2px, transparent 0);
+    background-size: 15px 15px;
+    top: -50%;
+    left: -50%;
+    transform: rotate(15deg);
+}
+
+.map-pin {
+    position: absolute;
+    font-size: 0.65rem;
+    background: rgba(0,0,0,0.7);
+    padding: 0.15rem 0.4rem;
+    border-radius: 40px;
+    border: 1px solid rgba(255,255,255,0.15);
+    white-space: nowrap;
+}
+
+.current-user {
+    top: 50%;
+    left: 45%;
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    animation: user-glow 2s infinite;
+}
+
+@keyframes user-glow {
+    0% { transform: scale(1); filter: drop-shadow(0 0 2px #02b3e4); }
+    50% { transform: scale(1.2); filter: drop-shadow(0 0 6px #02b3e4); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 2px #02b3e4); }
+}
+
+.partner-1 {
+    top: 20%;
+    left: 15%;
+}
+
+.partner-2 {
+    bottom: 20%;
+    right: 15%;
+}
+
+.distance {
+    color: #02b3e4;
+    font-size: 0.55rem;
+    margin-left: 2px;
+}
+
+.mock-biometrics-btn {
+    margin-top: auto;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.mock-biometrics-btn:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.bio-icon {
+    font-size: 1.1rem;
+}
+
+/* 2. 7Seconds Video Mock Screen */
+.seconds-screen {
+    background: #000000;
+    position: relative;
+}
+
+.seconds-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(230, 0, 50, 0.25) 0%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.85) 100%);
+    z-index: 1;
+}
+
+.video-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.6rem 0.5rem 0.5rem;
+    z-index: 2;
+    position: relative;
+}
+
+.video-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+}
+
+.video-tabs .active-tab {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+}
+
+.sidebar-actions {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #444;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.62rem;
+    font-weight: 700;
+}
+
+.add-badge {
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff2d55;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.55rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.action-item:active {
+    transform: scale(0.9);
+}
+
+.action-icon {
+    font-size: 1.25rem;
+    margin-bottom: 1px;
+}
+
+.music-disc-wrapper {
+    width: 25px;
+    height: 25px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin-disc 4s linear infinite;
+    border: 3px solid rgba(255,255,255,0.15);
+}
+
+@keyframes spin-disc {
+    100% { transform: rotate(360deg); }
+}
+
+.video-caption {
+    text-align: left;
+    margin-right: 3.5rem;
+    margin-top: auto;
+}
+
+.video-user {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.video-desc {
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.85);
+}
+
+@keyframes float-heart {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    15% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+    50% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+    100% { transform: translate(-50%, -75%) scale(0.8); opacity: 0; }
+}
+
+/* 3. DocTime Healthcare Mock Screen */
+.doctime-screen {
+    background: #0d1219;
+}
+
+.mock-app-header-colored {
+    background: linear-gradient(135deg, #0bb89e 0%, #038a83 100%);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 12px 12px;
+}
+
+.doctime-screen .app-logo {
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.online-tag {
+    font-size: 0.58rem;
+    font-weight: 700;
+    background: #eb5757;
+    color: #ffffff;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.doctime-search {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 0.45rem;
+    margin: 0.8rem;
+    text-align: left;
+}
+
+.search-placeholder {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+}
+
+.doctor-card-preview {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0 0.8rem;
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: left;
+}
+
+.doc-header {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.doc-avatar {
+    width: 40px;
+    height: 40px;
+    background: rgba(11, 184, 158, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border: 1px solid rgba(11, 184, 158, 0.2);
+}
+
+.doc-info h6 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.doc-info span {
+    font-size: 0.65rem;
+    color: #0bb89e;
+    font-weight: 600;
+}
+
+.doc-rating {
+    font-size: 0.6rem;
+    color: #f1c40f;
+    margin-top: 1px;
+}
+
+.doc-status-line {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.online-dot-pulse {
+    width: 6px;
+    height: 6px;
+    background: #27ae60;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 6px #27ae60;
+    animation: status-pulse 1.8s infinite;
+}
+
+.status-lbl {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+}
+
+.call-btn-mini {
+    width: 100%;
+    padding: 0.55rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 8px;
+    background: #0bb89e;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.call-btn-mini:hover {
+    background: #038a83;
+}
+
+.voip-call-toast {
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: -80px; /* Offscreen by default */
+    background: rgba(13, 18, 25, 0.95);
+    border: 1px solid rgba(11, 184, 158, 0.3);
+    border-radius: 12px;
+    padding: 0.65rem;
+    transition: bottom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.voip-call-toast.show-toast {
+    bottom: 0.5rem;
+}
+
+.toast-content {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    text-align: left;
+}
+
+.toast-phone {
+    font-size: 1.1rem;
+    animation: shake-phone 1.2s infinite;
+}
+
+@keyframes shake-phone {
+    0%, 100% { transform: rotate(0); }
+    15% { transform: rotate(-15deg); }
+    30% { transform: rotate(15deg); }
+    45% { transform: rotate(-10deg); }
+    60% { transform: rotate(10deg); }
+}
+
+.toast-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.toast-text strong {
+    font-size: 0.72rem;
+    color: #ffffff;
+}
+
+.toast-text span {
+    font-size: 0.62rem;
+    color: #0bb89e;
+}
+
+/* 4. Ratehammer Screen Styles */
+.ratehammer-screen {
+    background: #100b08;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.rate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 0.5rem;
+}
+
+.rate-header span {
+    font-weight: 800;
+    color: #d3a270;
+    font-size: 0.95rem;
+}
+
+.lang-toggle-btn {
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(211, 162, 112, 0.15);
+    color: #d3a270;
+    border: 1px solid rgba(211, 162, 112, 0.3);
+    cursor: pointer;
+}
+
+.loan-slider-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.slider-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.slider-lbl {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+}
+
+.slider-val {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #d3a270;
+}
+
+.sim-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    background: rgba(255,255,255,0.1);
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+}
+
+.sim-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d3a270;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(211, 162, 112, 0.6);
+}
+
+.comparison-results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.bank-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.7rem;
+}
+
+.bank-row strong {
+    color: #27ae60;
+}
+
+.canvas-sign-box {
+    margin-top: auto;
+}
+
+.canvas-lbl {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.4);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.signature-canvas {
+    height: 50px;
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(211, 162, 112, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sig-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ratehammer-screen.rtl-mode {
+    direction: rtl;
+    text-align: right;
+}
+
+/* 5. Bancharampur Connect Screen */
+.bancharampur-screen {
+    background: #0b1510;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.banch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.emergency-btn-card {
+    padding: 0.8rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform var(--transition-fast);
+}
+
+.emergency-btn-card:hover {
+    transform: translateY(-2px);
+}
+
+.emergency-btn-card .card-icon {
+    font-size: 1.4rem;
+}
+
+.emergency-btn-card .card-name {
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+.red-card { background: rgba(235, 87, 87, 0.12); border-color: rgba(235, 87, 87, 0.25); color: #eb5757; }
+.orange-card { background: rgba(242, 153, 74, 0.12); border-color: rgba(242, 153, 74, 0.25); color: #f2994a; }
+.blue-card { background: rgba(45, 156, 219, 0.12); border-color: rgba(45, 156, 219, 0.25); color: #2d9cdb; }
+.green-card { background: rgba(39, 174, 96, 0.12); border-color: rgba(39, 174, 96, 0.25); color: #27ae60; }
+
+.news-ticker-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.8rem;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.news-ticker-lbl {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #27ae60;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.news-ticker-content {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.75);
+}
+
+/* 6. Macrofit Nutrition Screen */
+.macrofit-screen {
+    background: #080c10;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.macro-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 0.4rem;
+}
+
+.calories-progress-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.8rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+}
+
+.svg-ring-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.progress-ring-circle {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.ring-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.ring-val {
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.ring-unit {
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 1px;
+}
+
+.calories-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.calories-text strong {
+    font-size: 0.78rem;
+}
+
+.calories-text span {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.5);
+}
+
+.nutrient-progress-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.nutrient-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nutrient-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+}
+
+.nutrient-meta span {
+    color: rgba(255,255,255,0.6);
+}
+
+.nutrient-bar {
+    height: 5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.nutrient-fill {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* 7. CRUST Pizza screen */
+.crust-screen {
+    background: #0f0706;
+    padding: 0.8rem;
+    text-align: left;
+}
+
+.crust-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 0.4rem;
+}
+
+.delivery-status-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.delivery-status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    z-index: 1;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #222;
+    border: 2px solid rgba(255,255,255,0.1);
+    font-size: 0.55rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+}
+
+.timeline-step.done .step-dot {
+    background: #27ae60;
+    border-color: #27ae60;
+    color: #ffffff;
+}
+
+.timeline-step.active-step .step-dot {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.5);
+}
+
+.step-lbl {
+    font-size: 0.55rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 600;
+}
+
+.timeline-step.active-step .step-lbl {
+    color: var(--accent-color);
+}
+
+.active-order-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 0.6rem 0.8rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.order-title {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin: 0 0 2px;
+}
+
+.order-details {
+    font-size: 0.68rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.mock-map-crust {
+    height: 85px;
+    background: #1c1c1e;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    margin-top: auto;
+}
+
+.road-path {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    width: 60%;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.15) 50%, transparent 50%);
+    background-size: 8px 2px;
+}
+
+.map-icon {
+    position: absolute;
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pizza-shop {
+    left: 10%;
+}
+
+.user-home {
+    right: 10%;
+}
+
+.moving-moto {
+    left: 15%;
+    font-size: 0.95rem;
+    transition: left 0.18s linear;
+}
+
+
+/* Media utility fixes for project layout on responsive breakpoints */
+@media (max-width: 1024px) {
+    .projects-display {
+        display: none !important; /* Hide desktop sticky simulator completely */
+    }
+}
+
+
